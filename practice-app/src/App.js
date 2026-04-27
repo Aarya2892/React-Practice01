@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import GoalsList from './GoalList/goalsList.js';
+import GoalsList from './GoalList/GoalsList.js';
+import NewGoal from './NewGoal/NewGoal.js';
 
 function App() {
 
@@ -18,10 +18,17 @@ function App() {
       text: "Course 3"
     }
   ]
+
+  const addNewGoalHandler = (newGoal) =>{
+      coursegoals.push(newGoal);
+      console.log(coursegoals)
+  }
+
   return (
     <div className="course-goals">
       <h1> Goals List</h1>
-       <GoalsList goals={coursegoals}/>
+      <NewGoal onAddGoal={addNewGoalHandler}/>
+      <GoalsList goals={coursegoals}/>
     </div>
   );
 }

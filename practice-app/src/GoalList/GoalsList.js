@@ -1,10 +1,10 @@
 import React from "react";
-import '../GoalList/goalsList.css'
+import '../GoalList/GoalsList.css'
 
 const GoalsList = props =>{
     return <ul className="goals-list">
-         {props.goals.map((goal)=>{
-            return <li className="goal">{goal.text}</li>
+         {props.goals.map(goal=>{
+            return <li className="goal" key={goal.id}>{goal.text}</li>
          })}
     </ul>
 }
